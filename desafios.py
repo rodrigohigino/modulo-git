@@ -30,14 +30,19 @@ def listar_comandos_git_basicos():
 
 
 def criar_mensagem_commit(funcao_nome):
-    """
-    Recebe o nome de uma função e retorna uma mensagem de commit padronizada.
-    Exemplo:
-    criar_mensagem_commit("listar_comandos_git_basicos") ->
-    "Implementa função listar_comandos_git_basicos"
-    """
-    pass
+    if not nome_funcao or not nome_funcao.strip():
+            raise ValueError("nome_funcao deve ser uma string não vazia")
+        nome = nome_funcao. strip()
+    return f"Implementa função {nome}"
 
+
+# Exemplos de uso
+if __name__ == "__main__":
+    print(criar_mensagem_commit("listar_comandos_git_basicos"))
+    print(criar_mensagem_commit("criar_usuario"))
+    print(criar_mensagem_commit("  calcular_total  "))
+
+    pass
 
 def verificar_tag_valida(tag):
     """
